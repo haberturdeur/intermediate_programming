@@ -20,6 +20,16 @@ int sum(int a, int b) {
     return a + b;
 }
 
+int sub(int a, int b) {
+    return a - b;
+}
+
+void stars(unsigned int numStars) {
+    for (int i = 0; i < numStars; i++) {
+        std::cout << "*" ;
+    }
+}
+
 int a = 0;
 
 void scope() {
@@ -62,5 +72,31 @@ int main() {
     std::cout << a << std::endl;
     scope();
     std::cout << a << std::endl;
+
+    std::cout << sum(64, 5) << std::endl;
+    std::cout << std::endl;
+
+    for (int i = 0; i < 4; i++) {
+    stars(3);
+    std::cout << std::endl;
+    }
+
+    std::cout << std::endl;
+
+    stars(1);
+    std::cout << std::endl;
+    stars(2);
+    std::cout << std::endl;
+    stars(1);
+    std::cout << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << " ";
+    stars(1);
+    std::cout << std::endl;
+    stars(3);
+    std::cout << std::endl;
+
     return 0;
 }
