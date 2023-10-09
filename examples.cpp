@@ -68,6 +68,39 @@ void cykly() {
     } while (i < 10);
 }
 
+void rectangle(int height) {
+    for(int i = 0; i < height; i++) {
+        stars(3);
+        std::cout << std::endl;
+    }
+}
+
+void sidePyramid(int height) {
+    for(int i = 0; i < height; i++) {
+        stars(i);
+        std::cout << std::endl;
+    }
+
+    for(int i = 0; i < height; i++) {
+        stars(height - i);
+        std::cout << std::endl;
+    }
+}
+
+void pyramid(int height) {
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < height - i - 1; j++) {
+            std::cout << " ";
+        }
+
+        for (int j = 0; j < 2 * i + 1; j++) {
+            std::cout << "*";
+        }
+
+        std::cout << std::endl;
+    }
+}
+
 int main() {
     std::cout << a << std::endl;
     scope();
@@ -76,27 +109,12 @@ int main() {
     std::cout << sum(64, 5) << std::endl;
     std::cout << std::endl;
 
-    for (int i = 0; i < 4; i++) {
-    stars(3);
+    rectangle(4);
     std::cout << std::endl;
-    }
-
+    sidePyramid(5);
     std::cout << std::endl;
-
-    stars(1);
-    std::cout << std::endl;
-    stars(2);
-    std::cout << std::endl;
-    stars(1);
-    std::cout << std::endl;
-
-    std::cout << std::endl;
-
-    std::cout << " ";
-    stars(1);
-    std::cout << std::endl;
-    stars(3);
-    std::cout << std::endl;
+    pyramid(6);
+    
 
     return 0;
 }
