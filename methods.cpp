@@ -28,11 +28,11 @@ struct Person {
     }
 
     // getters
-    int getAge() {
+    int getAge() const {
         return age;
     }
 
-    int getWeight() {
+    int getWeight() const {
         return weight;
     }
 
@@ -61,7 +61,7 @@ int main() {
     Person person = {25,70};
     person.speak();
 
-    Person(30,80).speak();
+    Person{30,80}.speak();
 
     std::cout << "Age: " << person.getAge() << std::endl;
     std::cout << "Weight: " << person.getWeight() << std::endl;
