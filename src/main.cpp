@@ -21,6 +21,7 @@ enum class ButtonPin {
 struct Button {
     const ButtonPin pin;
     bool lastState = false;
+    bool state = false;
 
     void init() {
         gpio_config_t io_conf = {
@@ -37,6 +38,24 @@ struct Button {
     bool isPressed() {
         return gpio_get_level(static_cast<gpio_num_t>(pin)) == 0;
     }
+
+    void update() {
+        lastState = state;
+        state = isPressed();
+    }
+
+    bool changed() {
+        return lastState != state;
+    }
+
+    bool isRisingEdge() {
+        return changed() && state == false;
+    }
+
+    bool isFallingEdge() {
+        return changed() && state == true;
+    }
+
 };
 
 void initLeds() {
